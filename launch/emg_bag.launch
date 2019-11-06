@@ -1,0 +1,11 @@
+<launch>
+
+<arg name="bname" default="emgbag.bag" />
+
+<node pkg="bag_emg" type="bag_emg_node" name="emg_bag_node" output="screen" >
+    <param name="bagname" type="str" value="/home/y-lai/$(arg bname)" />
+</node>
+
+
+
+</launch>
