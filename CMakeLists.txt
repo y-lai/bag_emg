@@ -7,13 +7,13 @@ find_package(catkin REQUIRED COMPONENTS
   rosbag
   roscpp
   track_robot_msgs
-  labjackt7test
+  labjackt7test_msgs
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+#  INCLUDE_DIRS include
 #  LIBRARIES bag_emg
-  CATKIN_DEPENDS rosbag roscpp track_robot_msgs
+  CATKIN_DEPENDS rosbag roscpp track_robot_msgs labjackt7test_msgs
 #  DEPENDS system_lib
 )
 

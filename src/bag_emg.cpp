@@ -1,6 +1,6 @@
 #include <ros/ros.h>
 #include <track_robot_msgs/Trigger.h>
-#include <labjackt7test/labjackt7test_streaming.h>
+#include <labjackt7test_msgs/labjackt7test_streaming.h>
 #include <rosbag/bag.h>
 #include <mutex>
 #include <algorithm>
@@ -17,7 +17,7 @@ std::mutex _mtx;
 // void triggerCallback(const track_robot_msgs::TriggerConstPtr& msg);
 // void emgCallback(const labjackt7test::labjackt7test_streamingConstPtr& emgmsg);
 
-void emgCallback(const labjackt7test::labjackt7test_streamingConstPtr& emgmsg)
+void emgCallback(const labjackt7test_msgs::labjackt7test_streamingConstPtr& emgmsg)
 {
     std::lock_guard<std::mutex> lock(_mtx);
     bag.write("labjack/channelstream",ros::Time::now(),*emgmsg);
